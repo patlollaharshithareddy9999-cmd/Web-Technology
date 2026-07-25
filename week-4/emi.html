@@ -1,0 +1,54 @@
+<html>
+    <body>
+        <h1 align="center">SBI BANK EMI CALCULATOR</h1>
+        <style>
+            input[type=text]{
+                padding:15px;
+                background-color:yellow;
+                color:white;
+                width:100%;
+                border:2px;
+                font-size:20px;
+            }
+            input[type=number]{
+                padding:15px;
+                background-color:red;
+                color:white;
+                width:100%;
+                border:2px;
+                font-size:20px;
+            }
+            input[type=button]{
+                padding:15px;
+                background-color:lightblue;
+                color:white;
+                width:100%;
+                border:2px;
+                margin:50px;
+                font-size:20px;
+            }
+            
+
+        </style>
+        <form>
+            Name:<input type="text" placeholder="enter your name"/><br>
+            Occupation:<input type="text" placeholder="enter occupation"/><br>
+            Amount:<input type="number" placeholder="enter loan amount" id="amt"/><br>
+            Interest rate:<input type="number" placeholder="enter interest" id="roi"/><br>
+            Tenure:<input type="number" placeholder="enter years" id="t"/><br>
+            <input type="button" value="calculat emi" onclick="calculateEMI()"/>
+        </form>
+        <h2 id="result"></h2>
+        <script>
+            function calculateEMI()
+            var A=document.getElementById("amt").value;
+            var I=document.getElementById("roi").value;
+            var T=document.getElementById("t").value;
+
+            var mir=(I/12)/100;
+            var months=Y*12;
+            var emi=amount*roi*Math.pow(1+roi,months)/(Math.pow(1+roi,months)-1);
+            document.getElementById("result").innerHTML="<h4>your emi is:"+emi;
+        </script>
+    </body>
+</html>
