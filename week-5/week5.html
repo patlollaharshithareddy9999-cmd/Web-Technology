@@ -1,0 +1,58 @@
+<html>
+    <body bgcolor="red">
+         <h1>EMAIL REGISTRATION</h1>
+        <form align="center">
+            username:<input type="textfield" placeholder="enter user id" id="one"><br>
+            email:<input type="email" placeholder="enter email" id="two"><br>
+            mobile:<input type="number" placeholder="enter mobile no." id="three"><br>
+            <input type="submit" value="submit" onclick="return validate()">
+        </form>
+        <script>
+            function validate()
+            {
+            var un=document.getElementById("one");
+             var uname=un.value;
+            var mail=document.getElementById("two");
+            var email=mail.value;
+            var mn=document.getElementById("three");
+            var mobile=mn.value;
+            var unre=/^[a-zA-Z]+[0-9a-Za-Z._]*$/;
+            var ere=/^[a-zA-Z]+([\.-]?\w+)*@\w+([\._]?\w+)*(\.\w{2,3})+$/;
+            var mre=/^[6-9][0-9]{9}$/;
+        if(unre.test(uname))
+        {
+            if(ere.test(email))
+           {
+            if(mre.test(mobile))
+            {
+            alert("Registered successfully");
+            return true;
+            }
+           else
+           {
+            return error(un);
+           }
+        }
+        else
+        {
+            return error(mail);
+        }
+        }
+        else
+        {
+            return error(mn);
+        }
+    }
+        function error(ele)
+        {
+            alert("invalid");
+            ele.style.border="2px solid red";
+            ele.value="";
+            ele.placeholder="invalid";
+            ele.focus();
+            return false;
+        }
+
+        </script>
+    </body>
+</html>
